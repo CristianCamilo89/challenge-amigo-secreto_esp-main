@@ -14,6 +14,17 @@ function agregarAmigo()
                alert("Por favor, inserte un nombre");// Se Genera Alerta solicitando ingresar el nombre
     }
    input.value = ""; // limpiamos caja de Texto
-   
+   mostrarAmigo();
 }
 
+function mostrarAmigo()
+{
+    let nombreAmigo = document.getElementById("listaAmigos"); // Obtenemos el valor que hay en la lista
+    nombreAmigo.innerHTML = ""; // limpiamos la lista antes de actualizar para asegurarnos que no haya duplicados
+    for (let i=0; i < amigos.length; i++)
+    {
+        let lista = document.createElement("li");// creamos el elemento li 
+        lista.textContent = amigos[i];//Estamos agregando el texto que se encuentra dentro de la lista amigos en su parte i
+        nombreAmigo.appendChild(lista);//Agregamos los elementos li ya con su contenido
+    }
+}
